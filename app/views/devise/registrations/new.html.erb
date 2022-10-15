@@ -30,12 +30,12 @@
 
   <div class="field">
   <%= f.label :localidad %><br />
-  <%= f.text_field :localidad, autofocus: true%>
+  <%= f.select :localidad, ['Quilmes', 'Bernal', 'Berazategui']%>
   </div>
 
   <div class="field">
   <%= f.label :provincia %><br />
-  <%= f.text_field :provincia, autofocus: true%>
+  <%= f.select :provincia, ['Buenos Aires', 'CABA']%>
   </div>
 
   <div class="field">
