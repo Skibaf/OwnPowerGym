@@ -42,10 +42,10 @@
     <%end%>
 
     <% if user_signed_in? %>
-       <li class="nav-item">
         <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-default btn-sm" %>
-      </li>
-<%end%>
+     <% else %>
+        <%= link_to "Sign up", new_user_registration_path %>
+    <%end%>
     <%= yield %>
   </body>
 </html>
