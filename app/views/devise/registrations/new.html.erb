@@ -39,6 +39,12 @@
   </div>
 
   <div class="field">
+  <%= f.label :pais %><br />
+  <%= f.select :pais, ['Argentina']%>
+
+  <%= f.hidden_field :tipo, value: "A" %>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
