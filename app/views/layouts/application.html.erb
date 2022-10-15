@@ -14,6 +14,38 @@
   </head>
 
   <body>
+  <header>
+     <nav class="be-black white large-padding"> 
+       <ul  class="no-list row center-xs middle-xs">
+         <li class="col-md">
+           <h1 class="no-margin" id="logo">OwnPower Gym</h1>
+         </li>
+         <li class="col-md">
+           <%= link_to "Inicio", root_path %>
+         </li>
+         <li class="col-md">
+          Clases Disponibles
+         </li>
+         <li class="col-md">
+          Reserva de clase
+         </li>
+         <li class="col-md">
+         Mis Clases
+        </li>
+  </header>
+  
+    <% if notice %>
+       <p class="alert alert-primary"><%= notice %></p>
+    <%end%>
+    <% if alert %>
+       <p class="alert alert-danger"><%= alert %></p>
+    <%end%>
+
+    <% if user_signed_in? %>
+       <li class="nav-item">
+        <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-default btn-sm" %>
+      </li>
+<%end%>
     <%= yield %>
   </body>
 </html>
