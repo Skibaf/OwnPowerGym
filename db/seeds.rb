@@ -14,8 +14,8 @@ profe1 = User.create! :nombre => 'Martin', :email => 'martin@gmail.com', :passwo
 profe2 = User.create! :nombre => 'Juan', :email => 'juan@gmail.com', :password => '123456', :password_confirmation => '123456', :apellido => 'Lopez', :dni => '111111114', :direccion => 'guido244', :localidad => 'Bernal', :provincia => 'Bs As', :tipo => 'P'
 
 
-m1= Mode.create! :nombre =>'Online'
-m1= Mode.create! :nombre =>'Presencial'
+m1= Mode.create! :mode =>'Online'
+m1= Mode.create! :mode =>'Presencial'
 
-p1= Pterm.create! :nombre =>'Efectivo'
-p1= Mode.create! :nombre =>'MercadoPago'
+p1= Pterm.create! :pterm =>'Efectivo'
+p1= Pterm.create! :pterm =>'MercadoPago'
