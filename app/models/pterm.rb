@@ -1,0 +1,2 @@
+class Pterm < ApplicationRecord
+end

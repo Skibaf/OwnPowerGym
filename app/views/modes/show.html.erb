@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mode %>
+
+<div>
+  <%= link_to "Edit this mode", edit_mode_path(@mode) %> |
+  <%= link_to "Back to modes", modes_path %>
+
+  <%= button_to "Destroy this mode", @mode, method: :delete %>
+</div>

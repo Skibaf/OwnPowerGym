@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pterm %>
+
+<div>
+  <%= link_to "Edit this pterm", edit_pterm_path(@pterm) %> |
+  <%= link_to "Back to pterms", pterms_path %>
+
+  <%= button_to "Destroy this pterm", @pterm, method: :delete %>
+</div>

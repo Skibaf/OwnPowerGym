@@ -1,0 +1,22 @@
+<%= form_with(model: mode) do |form| %>
+  <% if mode.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mode.errors.count, "error") %> prohibited this mode from being saved:</h2>
+
+      <ul>
+        <% mode.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :mode, style: "display: block" %>
+    <%= form.text_field :mode %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
