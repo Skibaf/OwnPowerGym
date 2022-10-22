@@ -12,3 +12,10 @@ user2 = User.create! :nombre=> 'Meli', :email => 'melii@gmail.com', :password =>
 user3 = User.create! :nombre => 'Marti', :email => 'marti@gmail.com', :password => '123456', :password_confirmation => '123456', :apellido => 'Berraz', :dni => '111111113', :direccion => 'guido2', :localidad => 'Bernal', :provincia => 'Bs As', :tipo => 'A'
 profe1 = User.create! :nombre => 'Martin', :email => 'martin@gmail.com', :password => '123456', :password_confirmation => '123456', :apellido => 'Berra', :dni => '111111114', :direccion => 'guido24', :localidad => 'Bernal', :provincia => 'Bs As', :tipo => 'P'
 profe2 = User.create! :nombre => 'Juan', :email => 'juan@gmail.com', :password => '123456', :password_confirmation => '123456', :apellido => 'Lopez', :dni => '111111114', :direccion => 'guido244', :localidad => 'Bernal', :provincia => 'Bs As', :tipo => 'P'
+
+
+m1= Mode.create! :nombre =>'Online'
+m1= Mode.create! :nombre =>'Presencial'
+
+p1= Pterm.create! :nombre =>'Efectivo'
+p1= Mode.create! :nombre =>'MercadoPago'
