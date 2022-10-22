@@ -20,39 +20,39 @@
   <body>
   <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href=/welcome/index >OwnPower</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-           <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="../Views/clases.html">Clases disponibles</a></li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li><a class="dropdown-item" href="../Views/reserva.html">Reservar Clase</a></li>
-                      <li><a class="dropdown-item" href="../Views/misturnos.html">Ver mis Clases</a></li>
-                  </ul>
-              </li>
-          </ul>
-          <form class="d-flex">
-              <% if user_signed_in? %>
-                 Logged in as <strong><%= current_user.email %></strong>.
-                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-dark me-2' %>
-                 <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-outline-dark me-2" %>
-               <% else %>
-                   <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-dark me-2" %>
-                   <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark me-2" %>
-               <%end%>
-          </form>
+  <div class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <a class="navbar-brand" href=/welcome/index >OwnPower</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <%= link_to "Cursos", lessons_path, class: "navbar-brand" %>
+        <%= link_to "Nueva Reserva", new_booking_path, class: "navbar-brand" %>
+       <% if user_signed_in? %>
+         <%= link_to "Mis Clases", bookings_path, class: "navbar-brand" %>
+         <% if user_signed_in? %>
+            <%= link_to "Administracion", bookings_path, class: "navbar-brand" %>
+         <%end%>
+       <%end%>
 
-      </div>
-  </div>
+       </ul>
+       
+    </div>
+    <form class="d-flex">
+    <% if user_signed_in? %>
+       
+       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-dark me-2' %>
+       <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-outline-dark sm-2" %>
+     <% else %>
+         <%= link_to "Registrarse", new_user_registration_path, class: "btn btn-outline-dark me-2" %>
+         <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark me-2" %>
+     <%end%>
+</form>
+          
+   </div>   
 </nav>
 </header>
 
     <% if notice %>
        <p class="alert alert-primary"><%= notice %></p>
+       
     <%end%>
     <% if alert %>
        <p class="alert alert-danger"><%= alert %></p>

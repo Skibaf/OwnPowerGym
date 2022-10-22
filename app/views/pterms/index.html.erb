@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pterms</h1>
+<h1>Opciones de Pago</h1>
 
-<div id="pterms">
-  <% @pterms.each do |pterm| %>
-    <%= render pterm %>
-    <p>
-      <%= link_to "Show this pterm", pterm %>
-    </p>
-  <% end %>
-</div>
+<table>
+     <head>
+      <th></th>
+     </head>
+     <tbody>
+        <div id="pterms">
+            <% @pterms.each do |pterm| %>
+            <%= render pterm %>
+            <p>
+            <%= link_to "Show this pterm", pterm %>
+             </p>
+          <% end %>
+          </div>
+     </tbody>
+  </table>
 
 <%= link_to "New pterm", new_pterm_path %>

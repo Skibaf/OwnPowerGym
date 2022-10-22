@@ -1,9 +1,13 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[ show edit update destroy ]
+  #before_action :authenticate_user!
 
   # GET /lessons or /lessons.json
   def index
     @lessons = Lesson.all
+    @schedules= Schedule.all
+
+   
   end
 
   # GET /lessons/1 or /lessons/1.json
@@ -61,10 +65,13 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
+      @schedule= Schedule.find_by(lesson_id: @glesson.id)
+
+      
     end
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:curso, :mode_id, :user_id)
+      params.require(:lesson).permit(:curso, :mode_id, :user_id, schedules_ids:[])
     end
 end
