@@ -22,8 +22,9 @@
   </div>
 
   <div>
-    <%= form.label :lesson_id, style: "display: block" %>
+    <%= form.label :Clase %>
     <%= form.text_field :lesson_id %>
+    <%= collection_select( :lesson, :lesson_id, Lesson.all, :id, :lesson, {}, { :multiple => false } ) %>
   </div>
 
   <div>
@@ -31,12 +32,13 @@
     <%= form.text_field :user_id %>
   </div>
 
+
   <div>
-    <%= form.label :pterm_id, style: "display: block" %>
-    <%= form.text_field :pterm_id %>
+    <%= form.label :'Tipo de Pago' %>
+    <%= collection_select( :Pterm, :pterm_id, Pterm.all, :id, :pterm, {}, { :multiple => false } ) %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit  "Crear Clase" %>
   </div>
 <% end %>

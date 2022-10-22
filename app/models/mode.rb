@@ -1,3 +1,3 @@
 class Mode < ApplicationRecord
-    has_many :lesson
+    has_many :lessons
 end

@@ -17,6 +17,8 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @schedule= Schedule.new 
+    
   end
 
   # GET /lessons/1/edit
@@ -24,12 +26,14 @@ class LessonsController < ApplicationController
   end
 
   # POST /lessons or /lessons.json
+
   def create
     @lesson = Lesson.new(lesson_params)
+    
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to lesson_url(@lesson), notice: "Lesson was successfully created." }
+        format.html { redirect_to lessons_path, notice: "Mode was successfully created." }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,13 +69,13 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
-      @schedule= Schedule.find_by(lesson_id: @glesson.id)
+      @schedule= Schedule.find_by(lesson_id: @lesson.id)
 
       
     end
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:curso, :mode_id, :user_id, schedules_ids:[])
+      params.require(:lesson).permit(:curso, :mode_id, :user_id)
     end
 end
