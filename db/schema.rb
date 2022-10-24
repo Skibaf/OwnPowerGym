@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_155347) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_185126) do
+  create_table "bookings", force: :cascade do |t|
+    t.date "fecha"
+    t.time "time"
+    t.integer "lesson_id", null: false
+    t.integer "user_id", null: false
+    t.integer "pterm_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
+    t.index ["pterm_id"], name: "index_bookings_on_pterm_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string "curso"
     t.integer "mode_id", null: false
@@ -64,6 +77,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_155347) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "lessons"
+  add_foreign_key "bookings", "pterms"
+  add_foreign_key "bookings", "users"
   add_foreign_key "lessons", "modes"
   add_foreign_key "lessons", "users"
   add_foreign_key "schedules", "lessons"

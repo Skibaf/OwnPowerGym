@@ -1,0 +1,10 @@
+<h1>Editing booking</h1>
+
+<%= render "form", booking: @booking %>
+
+<br>
+
+<div>
+  <%= link_to "Ver esta reserva", @booking, class: "btn btn-dark" %>
+  <%= link_to "Volver a reservas ", bookings_path , class: "btn btn-dark" %>
+</div>

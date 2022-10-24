@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2022-10-24
+  time: 2022-10-24 15:51:26
+  lesson: one
+  user: one
+  pterm: one
+
+two:
+  fecha: 2022-10-24
+  time: 2022-10-24 15:51:26
+  lesson: two
+  user: two
+  pterm: two
