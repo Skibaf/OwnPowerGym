@@ -3,6 +3,7 @@ class CreateSchedules < ActiveRecord::Migration[7.0]
     create_table :schedules do |t|
       t.date :fecha
       t.time :hora
+      t.integer :status
       t.references :lesson, null: false, foreign_key: true
 
       t.timestamps

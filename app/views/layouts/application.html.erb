@@ -23,16 +23,17 @@
   <div class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
         <a class="navbar-brand" href=/welcome/index >OwnPower</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-        <%= link_to "Cursos", lessons_path, class: "navbar-brand" %>
-        <%= link_to "Nueva Reserva", new_booking_path, class: "navbar-brand" %>
-       <% if user_signed_in? %>
-         <%= link_to "Mis Clases", bookings_path, class: "navbar-brand" %>
-         <% if user_signed_in? %>
-            <%= link_to "Administracion", bookings_path, class: "navbar-brand" %>
-         <%end%>
-       <%end%>
+          <%= link_to "Cursos", lessons_path, class: "navbar-brand" %>
+          <%= link_to "Nueva Reserva", lessons_path, class: "navbar-brand" %>
+          <% if user_signed_in? %>
+              <%= link_to "Mis Clases", lessons_path, class: "navbar-brand" %>
+            <% if user_signed_in? %>
+             <%= link_to "Administracion", lessons_path, class: "navbar-brand" %>
+           <%end%>
+        <%end%>
+      </ul>
 
-       </ul>
+   
        
     </div>
     <form class="d-flex">

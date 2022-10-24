@@ -1,9 +1,37 @@
-<h1>New schedule</h1>
+<h1>Nuevo Horario</h1>
 
-<%= render "form", schedule: @schedule %>
+<%= form_with(model: @schedule) do |form| %>
+    
+  
+    <div>
+      <%= form.label :curso, style: "display: block" %>
+      <%= collection_select( :schedule, :lesson_id, Lesson.all, :id, :curso, {}, { :multiple => false } ) %>
+    </div>
+    
+    <div>
+      <%= form.label :fecha, style: "display: block" %>
+      <%= form.date_field :fecha %>
+    </div>
+    <div>
+      <%= form.label :hora, style: "display: block" %>
+     <%= form.time_field :hora %>
+      </div>
+    <div>
+      <%= form.label :status, style: "display: block" %>
+      <%= form.select :status, Schedule.statuses.keys, {}, class:'schedule-roles-select' %>
+    </div> <br>
 
-<br>
+    
+  
+    <div>
+      <%= form.submit "Guardar"   , class: "btn btn-dark" %>
+    </div>
+  <% end %> <br>
 
-<div>
-  <%= link_to "Back to schedules", schedules_path %>
+
+  <div>
+  <%= link_to "Volver a Calendarios", schedules_path, class: "btn btn-dark" %>
 </div>
+
+
+

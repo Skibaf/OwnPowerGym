@@ -1,13 +1,9 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[ show edit update destroy ]
-  #before_action :authenticate_user!
 
   # GET /lessons or /lessons.json
   def index
     @lessons = Lesson.all
-    @schedules= Schedule.all
-
-   
   end
 
   # GET /lessons/1 or /lessons/1.json
@@ -17,8 +13,6 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
-    @schedule= Schedule.new 
-    
   end
 
   # GET /lessons/1/edit
@@ -26,14 +20,12 @@ class LessonsController < ApplicationController
   end
 
   # POST /lessons or /lessons.json
-
   def create
     @lesson = Lesson.new(lesson_params)
-    
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to lessons_path, notice: "Mode was successfully created." }
+        format.html { redirect_to lesson_url(@lesson), notice: "Lesson was successfully created." }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -69,9 +61,6 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
-      @schedule= Schedule.find_by(lesson_id: @lesson.id)
-
-      
     end
 
     # Only allow a list of trusted parameters through.

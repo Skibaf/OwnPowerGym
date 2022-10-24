@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :bookings
-  resources :schedules
   resources :lessons
   resources :schedules
   
+  
   resources :lessons do
-       resources :schedules
+    resources :schedules
   end
   
   resources :pterms

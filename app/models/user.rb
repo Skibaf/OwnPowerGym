@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+ 
+
+
 def self.search_by(search_term)
           where("tipo = :search_term", search_term: search_term)
 end

@@ -1,14 +1,14 @@
 <%= form_with(model: lesson) do |form| %>
-    <% if lesson.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+  <% if lesson.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
 
-        <ul>
-          <% lesson.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
+      <ul>
+        <% lesson.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <div>
@@ -17,39 +17,17 @@
   </div>
 
   <div>
-    <%= form.label :modalidad %>
+    <%= form.label :mode_id, style: "display: block" %>
     <%= collection_select( :lesson, :mode_id, Mode.all, :id, :mode, {}, { :multiple => false } ) %>
   </div>
-  
+
   <div>
-    <%= form.label :Profesor %>
-    <%= collection_select( :user, :id, User.all.where(tipo: "P"), :id, :email, {}, { :multiple => false } ) %>
+    <%= form.label :user_id, style: "display: block" %>
+    
+    <%= form.text_field :user_id %>
+    </div> <br>
+
+  <div>
+    <%= form.submit "Guardar" , class: "btn btn-dark" %>
   </div>
-
-
-
-  <%= fields_for :schedules do |ff| %>
-            <div>
-            <%= ff.label :fecha, style: "display: block" %>
-            <%= ff.date_field :fecha %>
-          </div>
-
-          <div>
-            <%= ff.label :hora, style: "display: block" %>
-            <%= ff.time_field :hora %>
-          </div>
-
-          <div>
-          <%= ff.label :status, style: "display: block" %>
-          <%= ff.select :status, Schedule.statuses.keys, {}, class:'schedule-roles-select' %>
-          </div>
-  <% end %>
-
-
-  <div class="actions">
-    <%= form.submit "Crear Clase", class: "btn btn-dark" %>
-  </div>
-  <% end %>
-
-
-
+<% end %>
