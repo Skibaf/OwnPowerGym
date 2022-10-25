@@ -7,6 +7,7 @@
     <table class="table table-striped">
       <thead>
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Curso</th>
         <th scope="col">Modalidad</th>
         <th scope="col">Profesor</th>
@@ -19,10 +20,10 @@
               <% @lessons.each do |lesson| %>
                 <tr>
                  
+                <td><%= lesson.id %></td>
                 <td><%= lesson.curso %></td>
-                <td><%= lesson.mode_id %></td>
-                <td><%= lesson.user_id %></td>
-                <td><%= lesson.user_id %></td>
+                <td><%= lesson.mode.mode %></td>
+                <td><%= lesson.user.email %></td>
                 <td><%= link_to "Ver este curso", lesson, class: "btn btn-dark" %></td>
                  
               <% end %>
