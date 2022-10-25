@@ -6,22 +6,22 @@
 
   <p>
     <strong>Time:</strong>
-    <%= booking.time %>
+    <%= booking.time.strftime("%H:%M")  %>
   </p>
 
   <p>
     <strong>Lesson:</strong>
-    <%= booking.lesson_id %>
+    <%= booking.lesson.curso %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= booking.user_id %>
+    <%= booking.user.email%>
   </p>
 
   <p>
     <strong>Pterm:</strong>
-    <%= booking.pterm_id %>
+    <%= booking.pterm.pterm%>
   </p>
 
 </div>

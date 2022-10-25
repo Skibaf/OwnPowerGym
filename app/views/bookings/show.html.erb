@@ -3,10 +3,10 @@
 <%= render @booking %>
 
 <div>
-  <%= link_to "Edit this booking", edit_booking_path(@booking) , class: "btn btn-dark"  %> 
+  <%= link_to "Editar esta reserva", edit_booking_path(@booking) , class: "btn btn-dark"  %> 
  
 
-  <%= button_to "Destroy this booking", @booking, method: :delete , class: "btn btn-dark"  %>
+  <%= button_to "Cancelar esta reserva", @booking, method: :delete , class: "btn btn-dark"  %>
   <br>
-  <%= link_to "Back to bookings", bookings_path , class: "btn btn-dark" %>
+  <%= link_to "Volver a Reservas", bookings_path , class: "btn btn-dark" %>
 </div>

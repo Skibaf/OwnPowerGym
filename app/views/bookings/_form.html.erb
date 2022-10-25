@@ -17,23 +17,24 @@
   </div>
 
   <div>
-    <%= form.label :time, style: "display: block" %>
+    <%= form.label :Hora, style: "display: block" %>
     <%= form.time_field :time %>
   </div>
 
   <div>
-    <%= form.label :lesson_id, style: "display: block" %>
+    <%= form.label :Curso, style: "display: block" %>
     
     <%= collection_select( :booking, :lesson_id, Lesson.all, :id, :curso, {}, { :multiple => false } ) %>
   </div>
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    
+    <%= collection_select( :booking , :user_id, User.all, :id, :email, {}, { :multiple => false } ) %>
   </div>
 
   <div>
-    <%= form.label :pterm_id, style: "display: block" %>
+    <%= form.label :pago, style: "display: block" %>
     
     <%= collection_select( :booking, :pterm_id, Pterm.all, :id, :pterm, {}, { :multiple => false } ) %>
   </div>

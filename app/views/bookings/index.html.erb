@@ -2,13 +2,39 @@
 
 <h1>Bookings</h1>
 
-<div id="bookings">
-  <% @bookings.each do |booking| %>
-    <%= render booking %>
-    <p>
-      <%= link_to "Mostrar esta reserva", booking , class: "btn btn-dark"%>
-    </p>
-  <% end %>
-</div> <br>
+
+<div class="indexcontainer">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">ID Booking</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Tipo de Pago</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+             <tr>
+              <div id="bookings">
+              <% @bookings.each do |booking| %>
+                <tr>
+                 
+                <td><%= booking.id %></td>
+                <td><%= booking.fecha %></td>
+                <td><%= booking.time.strftime("%H:%M")  %></td>
+                <td><%= booking.lesson.curso %></td>
+                <td><%= booking.pterm.pterm %></td>
+                <td> <%= link_to "Mostrar esta reserva", booking , class: "btn btn-dark" %></td>
+                 
+              <% end %>
+              </div> 
+              </tr>  
+            
+      </tbody>
+    </table>
+  </div>
 
 <%= link_to "Nueva reserva", new_booking_path , class: "btn btn-dark" %>
