@@ -24,7 +24,8 @@
   <div>
     <%= form.label :user_id, style: "display: block" %>
     
-    <%= form.text_field :user_id %>
+   
+    <%= collection_select( :lesson, :user_id, User.all.where(tipo: "P"), :id, :email, {}, { :multiple => false } ) %>
     </div> <br>
 
   <div>

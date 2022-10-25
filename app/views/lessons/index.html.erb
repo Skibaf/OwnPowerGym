@@ -2,13 +2,38 @@
 
 <h1>Cursos</h1>
 
-<div id="lessons">
-  <% @lessons.each do |lesson| %>
-    <%= render lesson %>
-    <p>
-      <%= link_to "Ver este curso", lesson, class: "btn btn-dark" %>
-    </p>
-  <% end %>
-</div>
+<div class="indexcontainer">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Curso</th>
+        <th scope="col">Modalidad</th>
+        <th scope="col">Profesor</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+             <tr>
+              <div id="lessons">
+              <% @lessons.each do |lesson| %>
+                <tr>
+                 
+                <td><%= lesson.curso %></td>
+                <td><%= lesson.mode_id %></td>
+                <td><%= lesson.user_id %></td>
+                <td><%= lesson.user_id %></td>
+                <td><%= link_to "Ver este curso", lesson, class: "btn btn-dark" %></td>
+                 
+              <% end %>
+              </div> 
+              </tr>  
+            
+      </tbody>
+    </table>
+  </div>
+</div> <br>
+
+
 
 <%= link_to "Nuevo curso", new_lesson_path, class: "btn btn-dark" %>
