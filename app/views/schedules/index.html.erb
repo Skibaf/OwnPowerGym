@@ -1,30 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
+
 <h1>Horarios</h1>
 
-<div id="schedules">
-  <% @schedules.each do |l| %>
-    <p>
-      <strong>Curso:</strong>
-       <%= l.lesson_id %>
-    </p>
 
-    <p>
-      <strong>fecha:</strong>
-       <%= l.fecha %>
-    </p>
+<div class="indexcontainer">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">ID Horario</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+             <tr>
+              <div id="lessons">
+              <% @schedules.each do |s| %>
+                <tr>
+                 
+                <td><%= s.id %></td>
+                <td><%= s.lesson.curso %></td>
+                <td><%= s.fecha %></td>
+                <td><%= s.hora.strftime("%H:%M") %></td>
+                <td><%= s.status %></td>
+                <td>  </td>
+                 
+              <% end %>
+              </div> 
+              </tr>  
+            
+      </tbody>
+    </table>
+  </div>
+</div> <br>
 
-    <p>
-    <strong>Hora:</strong>
-    <%= l.hora %>
-    </p>
-
-    <p>
-    <strong>Estado:</strong>
-    <%= l.status%>
-    </p>
-    
-  <% end %>
-</div>
 
 <%= link_to "Nuevo Horario", new_schedule_path , class: "btn btn-dark" %>
