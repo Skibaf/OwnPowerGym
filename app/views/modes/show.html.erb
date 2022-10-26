@@ -2,9 +2,18 @@
 
 <%= render @mode %>
 
-<div>
-  <%= link_to "Edit this mode", edit_mode_path(@mode) %> |
-  <%= link_to "Back to modes", modes_path %>
+<div class="btn-group">
+  <%= link_to "Editar esta modalidad", edit_mode_path(@mode), class: "btn btn-outline-dark" %> 
+  
+</div>
 
-  <%= button_to "Destroy this mode", @mode, method: :delete %>
+<div class="btn-group">
+
+  <%= button_to "Eliminar esta modalidad", @mode, method: :delete , class: "btn btn-outline-dark"%>
+</div> <br> <br>
+
+<div class="btn-group">
+  
+  <%= link_to "Regresar a Modalidades", modes_path, class: "btn btn-dark" %>
+
 </div>

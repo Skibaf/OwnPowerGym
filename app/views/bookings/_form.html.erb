@@ -37,9 +37,9 @@
     <%= form.label :pago, style: "display: block" %>
     
     <%= collection_select( :booking, :pterm_id, Pterm.all, :id, :pterm, {}, { :multiple => false } ) %>
-  </div>
+  </div> <br>
 
   <div>
-    <%= form.submit "Reservar" , class: "btn btn-dark" %>
+    <%= form.submit "Reservar" , class: "btn btn-outline-dark" %>
   </div>
 <% end %>

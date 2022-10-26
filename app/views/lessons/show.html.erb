@@ -2,11 +2,17 @@
 
 <%= render @lesson %>
 
-<div>
-  <%= link_to "Editar este curso", edit_lesson_path(@lesson) , class: "btn btn-dark" %>
-  <%= button_to "Eliminar este curso", @lesson, method: :delete , class: "btn btn-dark"%>
-
+<div class="btn-group">
+  <%= link_to "Editar este curso", edit_lesson_path(@lesson) , class: "btn btn-outline-dark" %>
   
-</div> <br>
 
-<%= link_to "Volver a cursos", lessons_path , class: "btn btn-dark"%> 
+</div> 
+
+<div class="btn-group">
+  
+  <%= button_to "Eliminar este curso", @lesson, method: :delete , class: "btn btn-outline-dark"%>
+
+</div> <br> <br> 
+<div class="btn-group"> 
+   <%= link_to "Volver a cursos", lessons_path , class: "btn btn-dark"%> 
+</div>

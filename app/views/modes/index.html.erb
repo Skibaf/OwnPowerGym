@@ -1,23 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Modalidades</h1>
-<table>
-     <head>
-      <th></th>
-     </head>
-     <tbody>
-        <div id="modes">
-           <% @modes.each do |mode| %>
-                 <%= render mode %>
-               <p>
-               <%= link_to "Show this mode", mode %>
-              </p>
-           <% end %>
-           </div>
-       </tbody>
-    </table>
   
+<div class="indexcontainer">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Modalidad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+               <tr>
+                <div id="modes">
+                <% @modes.each do |mode| %>
+                  <tr>
+                   
+                  <td><%= mode.id %></td>
+                  <td><%= mode.mode %></td>
+                  <td><%= link_to "Ver esta modalidad", mode, class: "btn btn-dark" %></td>
+                   
+                <% end %>
+                </div> 
+                </tr>  
+              
+        </tbody>
+      </table>
+    </div>
+  </div> <br>
 
-
-<%= link_to "New mode", new_mode_path %>
+<%= link_to "New mode", new_mode_path ,class: "btn btn-dark"%>
 
