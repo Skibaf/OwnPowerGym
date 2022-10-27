@@ -12,6 +12,13 @@
   <% end %>
 
   <div>
+    <%= form.label :Curso, style: "display: block" %>
+    
+    <%= collection_select( :booking, :lesson_id, Lesson.all, :id, :curso, {}, { :multiple => false } ) %>
+  </div>
+
+  
+  <div>
     <%= form.label :fecha, style: "display: block" %>
     <%= form.date_field :fecha %>
   </div>
@@ -21,12 +28,7 @@
     <%= form.time_field :time %>
   </div>
 
-  <div>
-    <%= form.label :Curso, style: "display: block" %>
-    
-    <%= collection_select( :booking, :lesson_id, Lesson.all, :id, :curso, {}, { :multiple => false } ) %>
-  </div>
-
+  
   <div>
     <%= form.label :user_id, style: "display: block" %>
     
