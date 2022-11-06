@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
   get 'welcome/index'
   get 'welcome/cursos'
+  get 'welcome/admin'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

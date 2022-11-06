@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Administracion</h1>
+
+
+<section>
+
+    <div class="container">
+        
+    <div class="d-grid gap-2"> 
+
+          <%= link_to "Cursos", lessons_path, class: "btn btn-secondary btn-lg" %>
+          <br>
+          
+          <%= link_to "Reservas", bookings_path, class: "btn btn-secondary btn-lg" %>
+          <br>
+
+          <%= link_to "Horarios", schedules_path, class: "btn btn-secondary btn-lg" %>
+          <br>
+
+          <%= link_to "Terminos de Pago", pterms_path, class: "btn btn-secondary btn-lg" %>
+          <br>
+
+          <%= link_to "Modalidades", modes_path, class: "btn btn-secondary btn-lg" %>
+          <br>
+
+          <%= link_to "Nueva Reserva", new_booking_path, class: "btn btn-secondary btn-lg" %>
+          
+       
+ 
+          </div>
+   
+       
+   </div>
+
+</section>

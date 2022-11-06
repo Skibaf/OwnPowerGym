@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def cursos
+    @lessons = Lesson.all
   end
 end

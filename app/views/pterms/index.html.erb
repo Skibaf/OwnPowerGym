@@ -11,11 +11,11 @@
             <% @pterms.each do |pterm| %>
             <%= render pterm %>
             <p>
-            <%= link_to "Show this pterm", pterm %>
+            <%= link_to "Show this pterm", pterm , class: "btn btn-dark" %>
              </p>
           <% end %>
           </div>
      </tbody>
   </table>
 
-<%= link_to "New pterm", new_pterm_path %>
+<%= link_to "New pterm", new_pterm_path, class: "btn btn-dark" %>
