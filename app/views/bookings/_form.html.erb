@@ -30,9 +30,9 @@
 
   
   <div>
-    <%= form.label :user_id, style: "display: block" %>
     
-    <%= collection_select( :booking , :user_id, User.all, :id, :email, {}, { :multiple => false } ) %>
+     <%= form.number_field :user_id, id: :booking_user_id, value:current_user.id, type: :hidden %>
+  
   </div>
 
   <div>
