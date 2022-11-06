@@ -2,7 +2,9 @@
 
 <h1>Bookings</h1>
 
-
+<% if current_user.admin? %>
+             
+          
 <div class="indexcontainer">
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
     <table class="table table-striped">
@@ -12,6 +14,8 @@
         <th scope="col">Fecha</th>
         <th scope="col">Hora</th>
         <th scope="col">Curso</th>
+        <th scope="col">Alumno</th>
+        <th scope="col">Profesor</th>
         <th scope="col">Tipo de Pago</th>
         <th scope="col">Acciones</th>
       </tr>
@@ -26,6 +30,8 @@
                 <td><%= booking.fecha %></td>
                 <td><%= booking.time.strftime("%H:%M")  %></td>
                 <td><%= booking.lesson.curso %></td>
+                <td><%= booking.user.nombre %></td>
+                <td><%= booking.lesson.user.nombre %></td>
                 <td><%= booking.pterm.pterm %></td>
                 <td> <%= link_to "Mostrar esta reserva", booking , class: "btn btn-dark" %></td>
                  
@@ -37,4 +43,41 @@
     </table>
   </div>
 
+      <% else %>
+      <div class="indexcontainer">
+      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">ID Booking</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Profesor</th>
+            <th scope="col">Tipo de Pago</th>
+            <th scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+                 <tr>
+                  <div id="bookings">
+                  <% @mybookings.each do |booking| %>
+                    <tr>
+                     
+                    <td><%= booking.id %></td>
+                    <td><%= booking.fecha %></td>
+                    <td><%= booking.time.strftime("%H:%M")  %></td>
+                    <td><%= booking.lesson.curso %></td>
+                    <td><%= booking.lesson.user.nombre %></td>
+                    <td><%= booking.pterm.pterm %></td>
+                    <td> <%= link_to "Mostrar esta reserva", booking , class: "btn btn-dark" %></td>
+                     
+                  <% end %>
+                  </div> 
+                  </tr>  
+                
+          </tbody>
+        </table>
+      </div>
+      <% end %>
 <%= link_to "Nueva reserva", new_booking_path , class: "btn btn-dark" %>
