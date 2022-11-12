@@ -8,7 +8,8 @@
  
 </div> 
 <div class="btn-group">
-  <%= link_to "Editar esta reserva", edit_booking_path(@booking) , class: "btn btn-outline-dark"  %> 
+  
+  <%= button_to "Eliminar esta reserva", @booking, method: :delete , class: "btn btn-outline-dark"%>
 
  
 </div> <br> <br>

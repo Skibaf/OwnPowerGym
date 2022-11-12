@@ -42,9 +42,9 @@
       </tbody>
     </table>
   </div>
-
-      <% else %>
-      <div class="indexcontainer">
+  </div>
+  <% else %>
+    <div class="indexcontainer">
       <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
         <table class="table table-striped">
           <thead>
@@ -79,5 +79,10 @@
           </tbody>
         </table>
       </div>
-      <% end %>
+    </div>
+<% end %>
+ 
+<br>
+<div>
 <%= link_to "Nueva reserva", new_booking_path , class: "btn btn-dark" %>
+</div>
