@@ -16,73 +16,73 @@
 
     
   </head>
+  
 
-  <body>
-  <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-        <a class="navbar-brand" href=/welcome/index >OwnPower</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-          <%= link_to "Cursos", welcome_cursos_path, class: "navbar-brand" %>
-          <%= link_to "Nueva Reserva", new_booking_path, class: "navbar-brand" %>
-          <% if user_signed_in? %>
-              <%= link_to "Mis Clases", bookings_path, class: "navbar-brand" %>
-            <% if current_user.admin? %>
-             <%= link_to "Administracion", welcome_admin_path, class: "navbar-brand" %>
-           <%end%>
-        <%end%>
-      </ul>
-
-   
-       
-    </div>
-    <form class="d-flex">
-    <% if user_signed_in? %>
-       
-       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-dark me-2' %>
-       <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-outline-dark sm-2" %>
-     <% else %>
-         <%= link_to "Registrarse", new_user_registration_path, class: "btn btn-outline-dark me-2" %>
-         <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark me-2" %>
-     <%end%>
-</form>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <a class="navbar-brand" href=/welcome/index >OwnPower</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                  <%= link_to "Cursos", welcome_cursos_path, class: "navbar-brand" %>
+                  <%= link_to "Nueva Reserva", new_booking_path, class: "navbar-brand" %>
+                  <% if user_signed_in? %>
+                      <%= link_to "Mis Clases", bookings_path, class: "navbar-brand" %>
+                    <% if current_user.admin? %>
+                    <%= link_to "Administracion", welcome_admin_path, class: "navbar-brand" %>
+                  <%end%>
+                <%end%>
+              </ul>
+        
           
-   </div>   
-</nav>
-</header>
-
+              
+            </div>
+            <form class="d-flex">
+            <% if user_signed_in? %>
+              
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-dark me-2' %>
+              <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete, class: "btn btn-outline-dark sm-2" %>
+            <% else %>
+                <%= link_to "Registrarse", new_user_registration_path, class: "btn btn-outline-dark me-2" %>
+                <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark me-2" %>
+            <%end%>
+        </form>
+                  
+          </div>   
+        </nav>
+    </header>
+    <content>
+    
     <% if notice %>
        <p class="alert alert-primary"><%= notice %></p>
-       
     <%end%>
     <% if alert %>
        <p class="alert alert-danger"><%= alert %></p>
     <%end%>
-
-
     <div class="container overflow-hidden">
-    <%= yield %>
-
-    </div>
-    </div>
-
+       <%= yield %>
+   </div>
+   </content>
+    <footer class="mt-auto">
     <div class="footer bg-dark">
-          <footer class="page-footer font-medium">
-            <div class="container">
-              <div class="row alert">
-                 <div class="col-md-12 text-center">
-                   
-                     <i class="fa-brands fa-facebook text-bg-light"></i>
-                     <i class="fa-brands fa-square-instagram text-bg-light"></i>
-                 </div>
-               </div>
-            </div>
-             <div class="footer-copyright text-center py-2">
-                <p class="text-white">  © 2022 Copyright:
-                  <a class="text-white"  href="/"> OwnPower.com</a>
-                </p>
-             </div>
-            </footer> 
-          </div>
-  </body>
+    <footer class="page-footer font-medium">
+      <div class="container">
+        <div class="row alert">
+           <div class="col-md-12 text-center">
+             
+               <i class="fa-brands fa-facebook text-bg-light"></i>
+               <i class="fa-brands fa-square-instagram text-bg-light"></i>
+           </div>
+         </div>
+      </div>
+       <div class="footer-copyright text-center py-2">
+          <p class="text-white">  © 2022 Copyright:
+            <a class="text-white"  href="/"> OwnPower.com</a>
+          </p>
+       </div>
+      </footer> 
+    </div>
+    </footer>
+</body>
+
 </html>
