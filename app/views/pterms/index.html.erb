@@ -2,20 +2,42 @@
 
 <h1>Opciones de Pago</h1>
 
-<table>
-     <head>
-      <th></th>
-     </head>
-     <tbody>
-        <div id="pterms">
-            <% @pterms.each do |pterm| %>
-            <%= render pterm %>
-            <p>
-            <%= link_to "Show this pterm", pterm , class: "btn btn-dark" %>
-             </p>
-          <% end %>
-          </div>
-     </tbody>
-  </table>
+<div class="indexcontainer">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">ID </th>
+        <th scope="col">Termino de pago</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+             <tr>
+              <div id="lessons">
+              <% @pterms.each do |pt| %>
+                <tr>
+                 
+                <td><%= pt.id %></td>
+                <td><%= pt.pterm %></td>
+                
+                
+                
+                 
+              <% end %>
+              </div> 
+              </tr>  
+            
+      </tbody>
+    </table>
+  </div>
+</div> <br>
 
-<%= link_to "New pterm", new_pterm_path, class: "btn btn-dark" %>
+
+<div class="btn-group">
+  <div>
+  <%= link_to "Nuevo termino de pago", new_pterm_path, class: "btn btn-dark" %>
+  
+  <%= link_to "Atras", :back , class: "btn btn-dark" %>
+  </div>
+</div>

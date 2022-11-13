@@ -83,6 +83,10 @@
 <% end %>
  
 <br>
-<div>
-<%= link_to "Nueva reserva", new_booking_path , class: "btn btn-dark" %>
+<div class="btn-group">
+  <div>
+  <%= link_to "Nueva reserva", new_booking_path , class: "btn btn-dark" %>
+  
+  <%= link_to "Atras", :back , class: "btn btn-dark" %>
+  </div>
 </div>
