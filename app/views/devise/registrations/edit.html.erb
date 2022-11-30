@@ -8,30 +8,7 @@
   <%= f.text_field :nombre, autofocus: true, autocomplete: "nombre" %>
   </div>
 
-  <div class="field">
-  <%= f.label :apellido %><br />
-  <%= f.text_field :apellido, autofocus: true, autocomplete="apellido" %>
-  </div>
-
-  <div class="field">
-  <%= f.label :dni %><br />
-  <%= f.number_field :dni, autofocus: true, autocomplete="dni"%>
-  </div>
-
-  <div class="field">
-  <%= f.label :direccion %><br />
-  <%= f.text_field :direccion, autofocus: true, autocomplete="direccion" %>
-  </div>
-
-  <div class="field">
-  <%= f.label :localidad %><br />
-  <%= f.select :localidad, ['Quilmes', 'Bernal', 'Berazategui']%>
-  </div>
-
-  <div class="field">
-  <%= f.label :provincia %><br />
-  <%= f.select :provincia, ['Buenos Aires', 'CABA']%>
-  </div>
+  
 
   <div class="field">
   <%= f.label :pais %><br />
@@ -64,14 +41,15 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "btn btn-outline-dark me-2" %>
   </div>
 <% end %>
+<br>
+<h3>Cancelar mi Cuenta</h3>
 
-<h3>Cancel my account</h3>
+<p>No estas feliz? <%= button_to "Cancelar my cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "btn btn-outline-dark me-2" %></p>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back , class: "btn btn-outline-dark me-2" %>
+<br>
