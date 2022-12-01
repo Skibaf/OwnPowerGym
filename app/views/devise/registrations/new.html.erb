@@ -45,7 +45,13 @@
           <%= f.label :pais %><br />
           <%= f.select :pais, ['Argentina']%>
           </div>
-          <%= f.hidden_field :tipo, value: "A" %>
+
+        
+
+          <div class="field">
+          <%= f.label :"Usuario (A-Alumno  P-Profesor)" %><br />
+          <%= f.select :tipo, ['A', 'P']%>
+          </div>
 
           <div class="field">
             <%= f.label :password %>
